@@ -74,5 +74,6 @@ while True:
 
     return_text = completion.choices[0].message.content
     return_text = return_text.lstrip('\n')
+    # 需要将机器人的回答和你的提问再次发送回去,否则无法联系上下文
     history.append({'role': 'assistant', 'content': return_text})
     print("bot:", return_text)
