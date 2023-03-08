@@ -24,7 +24,7 @@ while True:
     # - n : 聊天轮次,比如设3就来回问3轮结束
     # - stream : 是否以流式数据发送,默认为false
     # - stop : string 或者 array,m默认为null具体没看明白什么意思,原为:Up to 4 sequences where the API will stop generating further tokens.
-    # - max_token bot : 返回的最大token长度,最长为4096,默认没说多少,较高的max_tokens值会产生更长的响应，但也可能会导致响应不相关或不准确。
+    # - max_token : 返回的最大token长度,最长为4096,默认没说多少,较高的max_tokens值会产生更长的响应，但也可能会导致响应不相关或不准确。
     # - presence_penalty : 控制聊天机器人生成响应时是否使用特定的词汇或主题。较高的presence_penalty值会导致聊天机器人更少地使用特定的词汇或主题。
     # - frequency_penalty : 控制聊天机器人生成响应时在文本中重复使用相同词汇的程度。较高的frequency_penalty值会导致聊天机器人更少地重复使用相同的词汇。
     # - logit_bits : 根据chatgpt的说法:用来控制聊天机器人生成响应时对某些单词或主题的偏好程度。具体来说，logit_bias是一个字典，它的键是单词或主题，值是偏好程度。这些偏好可以是正数或负数，
