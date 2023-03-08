@@ -1,6 +1,6 @@
 import openai
 
-SECRET_KEY = "XX"  # 替换你的API key
+SECRET_KEY = "XX"  # 替换你的API key 可在https://platform.openai.com/account/api-keys查询,只有在创建时能看,关了之后再也看不到了,如果忘记了,再新建一个
 openai.api_key = SECRET_KEY
 
 history = []
