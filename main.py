@@ -10,7 +10,26 @@ while True:
     history.append({'role': 'user', 'content': input_text})
 
     # API参数文档:https://platform.openai.com/docs/api-reference/chat/create
-
+    # openai.ChatCompletion.create包含的参数:
+    # - model:模型种类,目前只有 gpt-3.5-turbo 和 gpt-3.5-turbo-0301 ####必填
+    # - messages 发送给chatgpt的消息,格式类似:  ###必填
+    #     messages=[
+    #     {"role": "system", "content": "You are a helpful assistant."},
+    #     {"role": "user", "content": "Who won the world series in 2020?"},
+    #     {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+    #     ]
+    #    role只有以上三个参数
+    # - temperature:默认为1,可选0-2,控制聊天机器人生成的文本的创造性程度。较高的值会产生更加创造性的响应，但也可能会导致不准确或不相关的响应。
+    # - top-p : 默认为1 一般不动,控制聊天机器人在生成响应时选择的标记的数量。较高的top_p值会导致响应的多样性和创造性增加，但也可能会导致响应不准确或不相关。
+    # - n : 聊天轮次,比如设3就来回问3轮结束
+    # - stream : 是否以流式数据发送,默认为false
+    # - stop : string 或者 array,m默认为null具体没看明白什么意思,原为:Up to 4 sequences where the API will stop generating further tokens.
+    # - max_token bot : 返回的最大token长度,最长为4096,默认没说多少,较高的max_tokens值会产生更长的响应，但也可能会导致响应不相关或不准确。
+    # - presence_penalty : 控制聊天机器人生成响应时是否使用特定的词汇或主题。较高的presence_penalty值会导致聊天机器人更少地使用特定的词汇或主题。
+    # - frequency_penalty : 控制聊天机器人生成响应时在文本中重复使用相同词汇的程度。较高的frequency_penalty值会导致聊天机器人更少地重复使用相同的词汇。
+    # - logit_bits : 根据chatgpt的说法:用来控制聊天机器人生成响应时对某些单词或主题的偏好程度。具体来说，logit_bias是一个字典，它的键是单词或主题，值是偏好程度。这些偏好可以是正数或负数，
+    # 分别表示偏好或不偏好某个单词或主题。例如，如果您希望聊天机器人在生成响应时更注重"科技"方面的话题，可以将"科技"设置为偏好的主题，并在logit_bias参数中为其指定一个正数值。
+    # 需要注意的是，logit_bias参数的值会影响聊天机器人生成响应时对不同单词和主题的选择。如果您不确定如何设置logit_bias参数，可以尝试使用默认值或者进行一些实验来了解不同值对聊天机器人响应的影响。
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo-0301",
         messages=history,
