@@ -23,7 +23,6 @@ while True:
     # - temperature:默认为1,可选0-2,控制聊天机器人生成的文本的创造性程度。较高的值会产生更加创造性的响应，但也可能会导致不准确或不相关的响应。
     # - top-p : 默认为1 一般不动,控制聊天机器人在生成响应时选择的标记的数量。较高的top_p值会导致响应的多样性和创造性增加，但也可能会导致响应不准确或不相关。
     # - n : 聊天轮次,比如设3就来回问3轮结束
-    # - timeout : 设置最长响应时间,单位为秒,超过后返回一个超时错误
     # - stream : 是否以流式数据发送,默认为false
     # - stop : string 或者 array,m默认为null具体没看明白什么意思,原为:Up to 4 sequences where the API will stop generating further tokens.
     # - max_token : 返回的最大token长度,最长为4096,默认没说多少,较高的max_tokens值会产生更长的响应，但也可能会导致响应不相关或不准确。
